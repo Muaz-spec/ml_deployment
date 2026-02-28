@@ -4,9 +4,9 @@ from streamlit_option_menu import option_menu
 
 #loading the dataset
 
-heart = pickle.load(open(r"C:\Users\User\OneDrive\Documents\PythonProjects\NLP\multiple_diseases_prediction\heart.sav", 'rb'))
-diabetes = pickle.load(open(r"C:\Users\User\OneDrive\Documents\PythonProjects\NLP\multiple_diseases_prediction\diabetes.sav", 'rb'))
-liver = pickle.load(open(r"C:\Users\User\OneDrive\Documents\PythonProjects\NLP\multiple_diseases_prediction\liver.sav", 'rb'))
+heart = pickle.load(open("heart.sav", 'rb'))
+diabetes = pickle.load(open("diabetes.sav", 'rb'))
+liver = pickle.load(open("liver.sav", 'rb'))
 
 with st.sidebar:
     selected = option_menu("Multiple Diseases Prediction",
@@ -132,5 +132,6 @@ if selected == "Liver Diseases":
             liver_diagnosis = "This person has liver deseases"
         else:
             liver_diagnosis = "This person is safe"
+
 
     st.success(liver_diagnosis)
